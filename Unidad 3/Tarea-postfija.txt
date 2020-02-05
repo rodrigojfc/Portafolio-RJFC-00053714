@@ -1,0 +1,12 @@
+Expresión 1 infija a postfija:
+A - B/(C*D$E)
+A - B/(CDE$*)
+A - B(CDE$*)/
+AB(CDE$*)/-
+ABCDE$*/-
+
+Expresión 2 infija a postfija:
+((A + B) * C - (D - E))$(F + G)
+((AB+) * C - (DE-))(FG+)$
+((AB+)C(DE-)-*)(FG+$)
+AB+CDE--*FG+$
