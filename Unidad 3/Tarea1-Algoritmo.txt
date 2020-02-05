@@ -1,0 +1,10 @@
+Algoritmo para ver ultimo elemento en una pila:
+1- Se crea una pila auxiliar.
+2- Crear un loop mientras que la pila original no este vacia.
+3-Utilizando la pila auxiliar se guarda el elemento top de la pila original.
+4- Se hace push del top a la pila auxiliar.
+5- Se elimina el elemento top de la pila original para poder acceder al resto de elementos. 
+6- Se mira el top de la pila auxiliar.
+7- Crear un loop mientras que la pila auxiliar no este vacia.
+8- Se guarda el elemento top de la pila auxiliar en la pila original y se hace push a esta.
+9- Se elimina el elemento top de la pila auxiliar para acceder al resto de la pila. 
