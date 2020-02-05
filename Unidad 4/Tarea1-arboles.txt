@@ -1,0 +1,46 @@
+Arbol 1 
+Raiz: A
+Ramas: B-D-E-C
+Hojas: G-H-I-F
+
+G-H-I -> Nodos en nivel 3
+D-E-F -> Nodos en nivel 2
+B-C -> Nodos en nivel 1
+A -> Nivel 0
+
+Profundidad = 3
+Peso = 9
+Orden = 2
+
+El arbol no es lleno o estricto.
+El arbol no es perfecto.
+
+
+Recorrido arbol 1:
+In orden IRD: D-G-B-A-H-E-I-C-F
+Pre orden RID: A-B-D-G-C-E-H-I-F
+Post orden IDR: G-D-B-H-I-E-F-C-A
+
+Arbol 2
+Raiz: A
+Ramas: B-C-D-E-F-H
+Hojas: I-J-G-K-L
+
+A -> Nivel 0
+B -> Nivel 1
+C-D -> Nivel 2
+E-F-G-H -> Nivel 3
+I-J-K-L -> Nivel 4
+
+Profundiad = 4
+Peso = 12
+Orden = 2
+
+El arbol no es lleno o estricto.
+El arbol no es perfecto.
+
+
+Recorrido arbol 2:
+In orden IRD: E-I-C-F-J-B-G-D-K-H-L-A
+Pre orden RID:  A-B-C-E-I-F-J-D-G-H-K-L
+Post orden IDR: I-E-J-F-C-G-K-L-H-D-B-A
