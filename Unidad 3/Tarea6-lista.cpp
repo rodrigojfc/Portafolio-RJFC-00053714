@@ -59,15 +59,8 @@ Libro solicitarDato(){
     return p;
 }
 
-void mostrarDato(Libro p){
+void mostrarDato(Libro p, int choice){
 
-    int choice;
-
-    cout << "Que quiere ver\n";
-    cout <<"1- espanol\n";
-    cout << "2- misterio\n";
-    cout<< "3- todos\n";
-    cin >> choice; cin.ignore();
 
     switch(choice){
         case 1:
@@ -123,8 +116,6 @@ void mostrarDato(Libro p){
     default:
     break;
      }
-
-
 }
 
 bool comparar(Libro a, Libro b){
@@ -150,7 +141,7 @@ void insertarFinal(T p);
 void insertarDespuesDe(T p);
 void insertarAntesDe(T p);
 void agregar();
-void mostrar();
+void mostrar(int choice);
 void eliminar();
 void buscar();
 void invertir(Nodo** nodoInicio);
@@ -162,6 +153,7 @@ T acceder();
 int main(){
     cout << "Inicializando..." << endl;
     pInicio = NULL;
+    int choice;
     
     bool continuar = true;
     do{
@@ -175,7 +167,14 @@ int main(){
         cin >> opcion;
         switch(opcion){
             case 1: agregar(); break;
-            case 2: mostrar(); break;
+            case 2: 
+                cout << "Que quiere ver\n";
+                cout <<"1- espanol\n";
+                cout << "2- misterio\n";
+                cout<< "3- todos\n";
+                cin >> choice; cin.ignore();
+            mostrar(choice);
+            break;
             case 3: eliminar(); break;
             case 4: buscar(); break;
             case 5: invertir(&pInicio); break;
@@ -299,18 +298,40 @@ void agregar(){
     }while(continuar);
 }
 
-void mostrar() {
+void mostrar(int choice) {
     Nodo *s = pInicio;
-
-     while (s != NULL) {
-        mostrarDato(s->dato);
+    while (s != NULL) {
+        mostrarDato(s->dato, choice);
         s = s->sig;
-    }
-
-
+        }
+ 
 }
 
 void eliminar(){
+    int selection = 0;
+    cout << "\n\t1- Eliminar libros de Ciencia ficcion\n";
+    cout <<"\n\t2- Buscar libro a eliminar\n";
+    cin >> selection; cin.ignore();
+
+    if(selection == 1){
+        Nodo* p = pInicio, *q = NULL;
+        while(p != NULL && p->dato.genero == ciencia_ficcion){
+        q = p;
+        p = p->sig;
+    }
+    if(p == NULL){
+        cout << "No existen libros de ciencia ficcion" << endl;
+        return;
+    }
+    if(q == NULL)
+        pInicio = p->sig;
+    else
+        q->sig = p->sig;
+    delete(p);
+    cout << "Dato borrado!" << endl;
+    }
+    
+    else{
     cout << "Dato a eliminar: ";
     T ref = solicitarDato();
     
@@ -330,6 +351,7 @@ void eliminar(){
         q->sig = p->sig;
     delete(p);
     cout << "Dato borrado!" << endl;
+    }
 }
 
 void buscar() {
@@ -401,7 +423,7 @@ T acceder() {
         for (int i = 0; i < indice; i++) {
             s = s->sig;
         }
-        mostrarDato(s->dato);
+        mostrarDato(s->dato, 3);
         return s->dato;
     }
     else{
