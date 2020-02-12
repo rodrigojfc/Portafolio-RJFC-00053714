@@ -1,0 +1,6 @@
+Funcion invertir: 
+1- Se inicializa un nuevo nodo en NULL
+2- Se crea un nuevo nodo y se iguala al nodo inicio de la lista. 
+3- Se crea un nodo auxiliar para recorrer toda la lista.
+4-Un ciclo que mientras el nuevo nodo sea diferente de un nodo vacío va a irse desplazando en la lista original y guardando los valores del puntero siguiente y el dato en el nodo auxiliar. 
+5-Por ultimo se cambia la direccion del nodo inicio al nodo "result" ya con la lista invertida.
