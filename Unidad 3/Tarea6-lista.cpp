@@ -315,10 +315,10 @@ void eliminar(){
 
     if(selection == 1){
         Nodo* p = pInicio, *q = NULL;
-        while(p != NULL && p->dato.genero == ciencia_ficcion){
+        while(p != NULL && p->dato.genero != ciencia_ficcion){
         q = p;
         p = p->sig;
-    }
+    
     if(p == NULL){
         cout << "No existen libros de ciencia ficcion" << endl;
         return;
@@ -330,7 +330,7 @@ void eliminar(){
     delete(p);
     cout << "Dato borrado!" << endl;
     }
-    
+    }
     else{
     cout << "Dato a eliminar: ";
     T ref = solicitarDato();
