@@ -1,12 +1,13 @@
 //Calcular profundidad en un arbol
-void depth(node* tree, int contador){
+/*void depth(node* tree, int contador){
     if(!(*tree)){
-        cout << "Profundidad del arbol:\t0\n";
-    }
-    
+        if(contador <= 0)
+            cout << "Profundidad del arbol:\t0\n";
+        else
+            cout <<"La profundidad del arbol es: " << contador;
+
     else{
-        contador ++;
-        (pTree->left, 0);
-        (pTree->right, 0);
+        depth(pTree->left, contador + 1);
+        depth(pTree->right, contador + 1;
     }
-}
+}*/
